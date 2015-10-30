@@ -47,7 +47,7 @@ namespace AutomatedTester.BrowserMob
         
         public void NewHar(string reference = null)
         {
-            MakeRequest(String.Format("{0}/{1}/har", _baseUrlProxy, _port), "PUT", reference);
+            MakeRequest(String.Format("{0}/{1}/har?captureHeaders=true", _baseUrlProxy, _port), "PUT", reference);
         }
 
         private static WebResponse MakeRequest(string url, string method, string reference = null)
@@ -63,7 +63,7 @@ namespace AutomatedTester.BrowserMob
                     requestStream.Close();
                 }
                 
-                request.ContentType = "application/x-www-form-urlencoded";
+                request.ContentType = "application/x-www-form-urlencoded";                
             }
             else            
                 request.ContentLength = 0;
@@ -109,7 +109,31 @@ namespace AutomatedTester.BrowserMob
                 using (var responseStreamReader = new StreamReader(responseStream))
                 {
                     var json = responseStreamReader.ReadToEnd();
-                    return JsonConvert.DeserializeObject<HarResult>(json);
+                    var deserializerSettings = new JsonSerializerSettings()
+                    {
+                        DateFormatHandling = DateFormatHandling.IsoDateFormat,
+                        DateParseHandling = DateParseHandling.None,
+                        DateTimeZoneHandling = DateTimeZoneHandling.Utc
+                    };
+                    return JsonConvert.DeserializeObject<HarResult>(json, deserializerSettings);
+                    //return JsonConvert.DeserializeObject<HarResult>(json);
+                }
+            }
+        }
+
+        public string GetHarRaw()
+        {
+            var response = MakeRequest(String.Format("{0}/{1}/har", _baseUrlProxy, _port), "GET");
+            using (var responseStream = response.GetResponseStream())
+            {
+                if (responseStream == null)
+                    return null;
+
+                using (var responseStreamReader = new StreamReader(responseStream))
+                {
+                    var json = responseStreamReader.ReadToEnd();
+
+                    return json;                    
                 }
             }
         }

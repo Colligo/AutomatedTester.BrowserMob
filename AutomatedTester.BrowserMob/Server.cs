@@ -35,8 +35,38 @@ namespace AutomatedTester.BrowserMob
             
             try
             {
+                if (IsListening())
+                {
+                    throw new Exception("BrowserMob Proxy Already running");
+                    //var runningProcesses = Process.GetProcesses();
+                    //// now check the modules of the process
+                    //foreach (var process in runningProcesses)
+                    //{
+                    //    Debug.WriteLine(String.Format("Process: {0} ID: {1}", process.ProcessName, process.Id));
+                    //    if (process.ProcessName.Equals("cmd"))
+                    //    {
+                    //        //Debug.WriteLine(process.MainModule.FileName);
+                    //        foreach (ProcessModule module in process.Modules)
+                    //        {
+                    //            Debug.WriteLine(module.FileName);
+                    //            Thread.Sleep(10);
+                    //        }
+                    //        Thread.Sleep(10);
+                    //    }
+                    //    //// now check the modules of the process
+                    //    //foreach (ProcessModule module in process.Modules)
+                    //    //{
+                    //    //    Debug.WriteLine(module.FileName);
+                    //    //    if (module.FileName.Contains("BrowserMob"))
+                    //    //    {
+                    //    //        process.Kill();
+                    //    //    }
+                    //    //}
+                    //}
+                    //Thread.Sleep(1000);
+                }
                 _serverProcess.Start();
-                int count = 0;
+                var count = 0;
                 while (!IsListening())
                 {
                     Thread.Sleep(1000);
@@ -63,7 +93,7 @@ namespace AutomatedTester.BrowserMob
             if (_serverProcess != null && !_serverProcess.HasExited)
             {
                 _serverProcess.CloseMainWindow();
-                _serverProcess.Dispose();
+                _serverProcess.Dispose();                
                 _serverProcess = null;
             }            
         }

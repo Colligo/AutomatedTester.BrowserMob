@@ -1,0 +1,7 @@
+C:\Users\dsareen\Documents\GitHub\CCS.Client\src\AutomatedTester.BrowserMob\AutomatedTester.BrowserMob\bin\Debug\AutomatedTester.BrowserMob.dll
+C:\Users\dsareen\Documents\GitHub\CCS.Client\src\AutomatedTester.BrowserMob\AutomatedTester.BrowserMob\bin\Debug\AutomatedTester.BrowserMob.pdb
+C:\Users\dsareen\Documents\GitHub\CCS.Client\src\AutomatedTester.BrowserMob\AutomatedTester.BrowserMob\bin\Debug\Newtonsoft.Json.dll
+C:\Users\dsareen\Documents\GitHub\CCS.Client\src\AutomatedTester.BrowserMob\AutomatedTester.BrowserMob\bin\Debug\Newtonsoft.Json.xml
+C:\Users\dsareen\Documents\GitHub\CCS.Client\src\AutomatedTester.BrowserMob\AutomatedTester.BrowserMob\obj\Debug\AutomatedTester.BrowserMob.dll
+C:\Users\dsareen\Documents\GitHub\CCS.Client\src\AutomatedTester.BrowserMob\AutomatedTester.BrowserMob\obj\Debug\AutomatedTester.BrowserMob.pdb
+C:\Users\dsareen\Documents\GitHub\CCS.Client\src\AutomatedTester.BrowserMob\AutomatedTester.BrowserMob\obj\Debug\AutomatedTester.BrowserMob.csprojResolveAssemblyReference.cache
