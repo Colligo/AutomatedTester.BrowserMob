@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Net.Sockets;
@@ -13,7 +13,7 @@ namespace AutomatedTester.BrowserMob
         private readonly String _path = string.Empty;
         private const string Host = "localhost";
 
-        public Server(string path) : this(path, /*8080*/ 8581 )
+        public Server(string path): this(path, 8581)
         {}
 
         public Server(string path, int port)
@@ -82,8 +82,7 @@ namespace AutomatedTester.BrowserMob
                 return("Exception: " + e.Message);
                 _serverProcess.Dispose();
                 _serverProcess = null;
-                throw;
-            }  
+            }
             return "Success from Starting Server";
         }
 
