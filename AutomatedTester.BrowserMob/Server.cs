@@ -22,7 +22,7 @@ namespace AutomatedTester.BrowserMob
             _port = port;
         }
 
-        public void Start()
+        public string Start()
         {
             _serverProcess = new Process
                                  {
@@ -79,10 +79,12 @@ namespace AutomatedTester.BrowserMob
             }
             catch
             {
+                return("Exception: " + e.Message);
                 _serverProcess.Dispose();
                 _serverProcess = null;
                 throw;
-            }   
+            }  
+            return "Success from Starting Server";
         }
 
         /// <summary>
