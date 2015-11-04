@@ -77,7 +77,7 @@ namespace AutomatedTester.BrowserMob
                     }
                 }
             }
-            catch
+            catch(Exception e)
             {
                 return("Exception: " + e.Message);
                 _serverProcess.Dispose();
