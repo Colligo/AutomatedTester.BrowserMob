@@ -1,2 +1,5 @@
 _ReSharper*
 *.suo
+packages
+AutomatedTester.BrowserMob/bin
+AutomatedTester.BrowserMob/obj
