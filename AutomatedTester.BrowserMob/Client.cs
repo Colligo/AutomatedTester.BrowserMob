@@ -95,6 +95,7 @@ namespace AutomatedTester.BrowserMob
 
         public void NewPage(string reference)
         {
+            Console.WriteLine("New Page: " + _baseUrlProxy + _port);
             MakeRequest(String.Format("{0}/{1}/har/pageRef", _baseUrlProxy, _port), "PUT", reference);            
         }
 
