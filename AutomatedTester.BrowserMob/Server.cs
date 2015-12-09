@@ -13,7 +13,7 @@ namespace AutomatedTester.BrowserMob
         private readonly String _path = string.Empty;
         private const string Host = "localhost";
 
-        public Server(string path): this(path, 8888)
+        public Server(string path): this(path, 8889)
         {}
 
         public Server(string path, int port)
